@@ -1,5 +1,5 @@
 <template>
-  <Header1400px/>
+  <PagesHeader1400px/>
   <v-main style="background-color: #F8F8F8">
     <Drawer/>
     <div style="margin-top: 100px">
@@ -51,11 +51,11 @@
 
 <script>
 import router from "../../router.js";
-import Header1400px from "../../components/Header1400px.vue";
 import Drawer from "../../components/Drawer.vue"
+import PagesHeader1400px from "../../components/PagesHeader1400px.vue";
 
 export default {
-  components: {Header1400px, Drawer},
+  components: {PagesHeader1400px, Drawer},
   data() {
     return {
 
