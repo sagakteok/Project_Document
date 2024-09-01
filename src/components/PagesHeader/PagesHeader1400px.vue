@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import router from "../router.js"
+import router from "../../router.js"
 
 export default {
   data() {
     return{
-      BarLogo: new URL('../assets/Documents.png', import.meta.url).href
+      BarLogo: new URL('../../assets/Documents.png', import.meta.url).href
     }
   },
   methods: {

@@ -1,151 +1,73 @@
 <template>
-  <Header1400px/>
-  <v-main style="background-color: #F1FAFF; display: flex; align-items: center; justify-content: center">
-    <div style="display: flex; align-items: center; justify-content: center">
-      <v-scroll-x-reverse-transition>
-        <div v-show="Transition1">
-          <v-card width="600px" height="600px" elevation="0" style="background-color: transparent; display: flex; align-items: center; justify-content: center; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 50px; color: #006196">
-            <text>멋진 배너가 들어올 자리!</text>
-          </v-card>
-        </div>
-      </v-scroll-x-reverse-transition>
-      <v-dialog-transition>
-        <div v-show="Transition1" style="margin-right: 100px; margin-left: 100px;border-left: thin solid #00619630; height: 50vh"/>
-      </v-dialog-transition>
-      <v-scroll-x-transition>
-        <div v-show="Transition1">
-          <div>
-            <v-hover v-slot="{isHovering, props}">
-              <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" @click="GotoAllDocuments()">
-                <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
-                  <template v-slot:prepend>
-                    <text v-bind="props" :style="CardTitleStyle(isHovering)">서류 모아보기</text>
-                  </template>
-                  <template v-slot:append>
-                    <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">서류 하나하나 찾고 싶다면?</text>
-                  </template>
-                </v-list-item>
-              </v-card>
-            </v-hover>
-          </div>
-          <div style="margin-top: 35px">
-            <v-hover v-slot="{isHovering, props}">
-              <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
-                <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
-                  <template v-slot:prepend>
-                    <text v-bind="props" :style="CardTitleStyle(isHovering)">법률, 행정</text>
-                  </template>
-                  <template v-slot:append>
-                    <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">법륩, 행정 업무를 처리하고 싶다면?</text>
-                  </template>
-                </v-list-item>
-              </v-card>
-            </v-hover>
-          </div>
-          <div style="margin-top: 35px">
-            <v-hover v-slot="{isHovering, props}">
-              <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
-                <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
-                  <template v-slot:prepend>
-                    <text v-bind="props" :style="CardTitleStyle(isHovering)">금융, 세무</text>
-                  </template>
-                  <template v-slot:append>
-                    <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">금융 및 세무 업무를 처리하고 싶다면?</text>
-                  </template>
-                </v-list-item>
-              </v-card>
-            </v-hover>
-          </div>
-          <div style="margin-top: 35px">
-            <v-hover v-slot="{isHovering, props}">
-              <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
-                <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
-                  <template v-slot:prepend>
-                    <text v-bind="props" :style="CardTitleStyle(isHovering)">자동차</text>
-                  </template>
-                  <template v-slot:append>
-                    <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">자동차 관련 업무를 처리하고 싶다면?</text>
-                  </template>
-                </v-list-item>
-              </v-card>
-            </v-hover>
-          </div>
-          <div style="margin-top: 35px">
-            <v-hover v-slot="{isHovering, props}">
-              <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
-                <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
-                  <template v-slot:prepend>
-                    <text v-bind="props" :style="CardTitleStyle(isHovering)">부동산</text>
-                  </template>
-                  <template v-slot:append>
-                    <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">부동산 관련 업무를 처리하고 싶다면?</text>
-                  </template>
-                </v-list-item>
-              </v-card>
-            </v-hover>
-          </div>
-          <div style="margin-top: 35px">
-            <v-hover v-slot="{isHovering, props}">
-              <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
-                <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
-                  <template v-slot:prepend>
-                    <text v-bind="props" :style="CardTitleStyle(isHovering)">사업, 근로</text>
-                  </template>
-                  <template v-slot:append>
-                    <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">근로에 관한 업무를 처리하고 싶다면?</text>
-                  </template>
-                </v-list-item>
-              </v-card>
-            </v-hover>
-          </div>
-        </div>
-      </v-scroll-x-transition>
-    </div>
+  <v-main v-if="Width500px" :style="VMainStyle()">
+    <MainHomeHeader500px/>
+    <MainHome500px/>
+    <SearchFooter500px/>
+  </v-main>
+  <v-main v-else-if="Width800px" :style="VMainStyle()">
+    <MainHomeHeader800px/>
+    <MainHome800px/>
+    <SearchFooter800px/>
+  </v-main>
+  <v-main v-else-if="Width1400px" :style="VMainStyle()">
+    <MainHomeHeader1400px/>
+    <MainHome1400px/>
+  </v-main>
+  <v-main v-else :style="VMainStyle()">
+    <MainHomeHeaderDesktop/>
+    <MainHomeDesktop/>
   </v-main>
 </template>
 
 <script>
 import router from "../../router.js";
-import Header1400px from "../../components/Header1400px.vue";
-import AllDocuments1400px from "../AllDocuments/AllDocuments1400px.vue";
+import MainHomeHeaderDesktop from "../../components/MainHomeHeader/MainHomeHeaderDesktop.vue";
+import MainHomeHeader1400px from "../../components/MainHomeHeader/MainHomeHeader1400px.vue";
+import MainHomeHeader800px from "../../components/MainHomeHeader/MainHomeHeader800px.vue";
+import MainHomeHeader500px from "../../components/MainHomeHeader/MainHomeHeader500px.vue";
+import MainHomeDesktop from "../../Pages/MainHome/MainHomeDesktop.vue";
+import MainHome1400px from "../../Pages/MainHome/MainHome1400px.vue";
+import MainHome800px from "../../Pages/MainHome/MainHome800px.vue";
+import MainHome500px from "../../Pages/MainHome/MainHome500px.vue";
+import SearchFooter800px from "../../components/SearchFooter/SearchFooter800px.vue";
+import SearchFooter500px from "../../components/SearchFooter/SearchFooter500px.vue";
+
 export default {
-  components: {Header1400px, AllDocuments1400px},
+  components: {MainHomeHeaderDesktop, MainHomeHeader1400px, MainHomeHeader800px, MainHomeHeader500px, MainHomeDesktop, MainHome1400px, MainHome800px, MainHome500px, SearchFooter800px, SearchFooter500px},
   data() {
     return {
-      Transition1: false,
+      windowWidth: window.innerWidth,
+      VMainStyle() {
+        return {
+          backgroundColor: "#F1FAFF",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }
+      }
     }
   },
   methods: {
-    GotoAllDocuments() {
-      router.push('/AllDocuments')
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    }
+  },
+  computed: {
+    Width1400px() {
+      return this.windowWidth < 1400;
     },
-    CardStyle() {
-      return {
-        width: "600px",
-        margin: "auto",
-        borderRadius: "20px",
-        fontFamily: "Inter-Bold, Helvetica"
-      }
+    Width800px() {
+      return this.windowWidth < 800;
     },
-    CardListitemStyle() {
-      return {
-        height: "80px"
-      }
-    },
-    CardTitleStyle(isHovering) {
-      return {
-        transition: "all .1s ease-in-out",
-        fontWeight: "800",
-        fontSize: isHovering ? "22px" : "20px",
-        color: isHovering ? "#006196" : "#000000",
-        marginLeft: "15px"
-      }
+    Width500px() {
+      return this.windowWidth < 500;
     }
   },
   mounted() {
-    setTimeout(()=>{
-      this.Transition1 = true;
-    }, 200)
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
   }
 }
 </script>

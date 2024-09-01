@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
     "@capacitor/ios": "^6.1.2",
+    "@capacitor/keyboard": "^6.0.2",
+    "@capacitor/status-bar": "^6.0.1",
+    "@vueuse/core": "^11.0.3",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
     "vuetify": "^3.7.0"

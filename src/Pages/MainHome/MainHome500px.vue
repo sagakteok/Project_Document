@@ -1,0 +1,149 @@
+<template>
+  <v-scroll-y-transition>
+    <div v-show="Transition1">
+      <div style="margin-top: calc(env(safe-area-inset-top) + 60px)"/>
+      <div>
+        <v-row>
+          <v-hover v-slot="{isHovering, props}">
+            <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" @click="GotoAllDocuments()">
+              <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
+                <template v-slot:prepend>
+                  <text v-bind="props" :style="CardTitleStyle(isHovering)">서류 모아보기</text>
+                </template>
+                <template v-slot:append>
+                  <text style="font-weight: 500; font-size: 9px; color: #808080; margin-right: 5px">서류 하나하나 찾고 싶다면?</text>
+                </template>
+              </v-list-item>
+            </v-card>
+          </v-hover>
+        </v-row>
+      </div>
+      <div style="margin-top: 25px">
+        <v-row>
+          <v-hover v-slot="{isHovering, props}">
+            <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)">
+              <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
+                <template v-slot:prepend>
+                  <text v-bind="props" :style="CardTitleStyle(isHovering)">법률, 행정</text>
+                </template>
+                <template v-slot:append>
+                  <text style="font-weight: 500; font-size: 9px; color: #808080; margin-right: 5px">법률, 행정 업무를 처리하고 싶다면?</text>
+                </template>
+              </v-list-item>
+            </v-card>
+          </v-hover>
+        </v-row>
+      </div>
+      <div style="margin-top: 25px">
+        <v-row>
+          <v-hover v-slot="{isHovering, props}">
+            <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)">
+              <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
+                <template v-slot:prepend>
+                  <text v-bind="props" :style="CardTitleStyle(isHovering)">금융, 세무</text>
+                </template>
+                <template v-slot:append>
+                  <text style="font-weight: 500; font-size: 9px; color: #808080; margin-right: 5px">금융 및 세무 업무를 처리하고 싶다면?</text>
+                </template>
+              </v-list-item>
+            </v-card>
+          </v-hover>
+        </v-row>
+      </div>
+      <div style="margin-top: 25px">
+        <v-row>
+          <v-hover v-slot="{isHovering, props}">
+            <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)">
+              <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
+                <template v-slot:prepend>
+                  <text v-bind="props" :style="CardTitleStyle(isHovering)">자동차</text>
+                </template>
+                <template v-slot:append>
+                  <text style="font-weight: 500; font-size: 9px; color: #808080; margin-right: 5px">자동차 관련 업무를 처리하고 싶다면?</text>
+                </template>
+              </v-list-item>
+            </v-card>
+          </v-hover>
+        </v-row>
+      </div>
+      <div style="margin-top: 25px">
+        <v-row>
+          <v-hover v-slot="{isHovering, props}">
+            <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)">
+              <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
+                <template v-slot:prepend>
+                  <text v-bind="props" :style="CardTitleStyle(isHovering)">부동산</text>
+                </template>
+                <template v-slot:append>
+                  <text style="font-weight: 500; font-size: 9px; color: #808080; margin-right: 5px">부동산 관련 업무를 처리하고 싶다면?</text>
+                </template>
+              </v-list-item>
+            </v-card>
+          </v-hover>
+        </v-row>
+      </div>
+      <div style="margin-top: 25px">
+        <v-row>
+          <v-hover v-slot="{isHovering, props}">
+            <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)">
+              <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
+                <template v-slot:prepend>
+                  <text v-bind="props" :style="CardTitleStyle(isHovering)">사업, 근로</text>
+                </template>
+                <template v-slot:append>
+                  <text style="font-weight: 500; font-size: 9px; color: #808080; margin-right: 5px">근로에 관한 업무를 처리하고 싶다면?</text>
+                </template>
+              </v-list-item>
+            </v-card>
+          </v-hover>
+        </v-row>
+      </div>
+      <div style="height: calc(env(safe-area-inset-top) + env(safe-area-inset-top))"/>
+    </div>
+  </v-scroll-y-transition>
+</template>
+
+<script>
+import router from "../../router.js";
+import AllDocuments1400px from "../AllDocuments/AllDocuments1400px.vue";
+export default {
+  components: {AllDocuments1400px},
+  data() {
+    return {
+      Transition1: false,
+    }
+  },
+  methods: {
+    GotoAllDocuments() {
+      router.push('/AllDocuments')
+    },
+    CardStyle() {
+      return {
+        width: "clamp(250px, 70vw, 450px)",
+        margin: "auto",
+        borderRadius: "10px",
+        fontFamily: "Inter-Bold, Helvetica"
+      }
+    },
+    CardListitemStyle() {
+      return {
+        height: "clamp(60px, 8vh, 100px)"
+      }
+    },
+    CardTitleStyle(isHovering) {
+      return {
+        transition: "all .1s ease-in-out",
+        fontWeight: "800",
+        fontSize: isHovering ? "15.4px" : "14px",
+        color: isHovering ? "#006196" : "#000000",
+        marginLeft: "5px"
+      }
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.Transition1 = true;
+    }, 200)
+  }
+}
+</script>

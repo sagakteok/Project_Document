@@ -1,7 +1,6 @@
 <template>
   <PagesHeader1400px/>
   <v-main style="background-color: #F8F8F8">
-    <Drawer/>
     <div style="margin-top: 100px">
       <div style="margin-top: 20px">
         <div style="display: flex; align-items: center; justify-content: center">
@@ -51,11 +50,10 @@
 
 <script>
 import router from "../../router.js";
-import Drawer from "../../components/Drawer.vue"
-import PagesHeader1400px from "../../components/PagesHeader1400px.vue";
+import PagesHeader1400px from "../../components/PagesHeader/PagesHeader1400px.vue";
 
 export default {
-  components: {PagesHeader1400px, Drawer},
+  components: {PagesHeader1400px},
   data() {
     return {
 

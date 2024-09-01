@@ -1,6 +1,7 @@
 <template>
   <PagesHeader1400px/>
   <v-main style="background-color: #F8F8F8">
+    <Drawer/>
     <div style="margin-top: 30px; margin-left: 10px">
       <v-dialog-transition>
         <v-btn v-show="Transition1" variant="text" prepend-icon="mdi-arrow-left" rounded @click="GotoBack()" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px">이전 화면</v-btn>
@@ -23,48 +24,55 @@
       </v-row>
     </div>
     <div style="margin-top: 120px;">
-      <v-scroll-y-transition>
-        <v-card v-show="Transition2" elevation="0" style="width: 600px; margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
-          <v-list>
-            <v-list-group v-model="open[0]">
-              <template v-slot:activator="{props: activatorProps}">
-                <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px; color: #000000; margin-left: 10px">출력 방법</v-list-item>
-              </template>
-              <v-list-item>
-                <v-card style="height: 200px; margin-left: 10px; margin-right: 10px;">
-                </v-card>
-              </v-list-item>
-            </v-list-group>
-          </v-list>
-        </v-card>
-      </v-scroll-y-transition>
+      <v-row>
+        <v-scroll-y-transition>
+          <v-card v-show="Transition2" elevation="0" style="width: 800px; margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
+            <v-list>
+              <v-list-group v-model="open[0]">
+                <template v-slot:activator="{props: activatorProps}">
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px; color: #000000; margin-left: 10px">출력 방법</v-list-item>
+                </template>
+                <v-list-item>
+                  <div>
+                    Hi Faker
+                  </div>
+                </v-list-item>
+              </v-list-group>
+            </v-list>
+          </v-card>
+        </v-scroll-y-transition>
+      </v-row>
     </div>
-    <div style="margin-top: 30px;">
-      <v-scroll-y-transition>
-        <v-card v-show="Transition3" elevation="0" style="width: 600px; margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
-          <v-list>
-            <v-list-group v-model="open[0]">
-              <template v-slot:activator="{props: activatorProps}">
-                <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px; color: #000000; margin-left: 10px">서류 양식</v-list-item>
-              </template>
-              <v-list-item>
-                <v-card style="height: 200px; margin-left: 10px; margin-right: 10px;">
-                </v-card>
-              </v-list-item>
-            </v-list-group>
-          </v-list>
-        </v-card>
-      </v-scroll-y-transition>
+    <div style="margin-top: 50px;">
+      <v-row>
+        <v-scroll-y-transition>
+          <v-card v-show="Transition3" elevation="0" style="width: 800px; margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
+            <v-list>
+              <v-list-group v-model="open[0]">
+                <template v-slot:activator="{props: activatorProps}">
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px; color: #000000; margin-left: 10px">서류 양식</v-list-item>
+                </template>
+                <v-list-item>
+                  <div>
+                    Hi Faker
+                  </div>
+                </v-list-item>
+              </v-list-group>
+            </v-list>
+          </v-card>
+        </v-scroll-y-transition>
+      </v-row>
     </div>
   </v-main>
 </template>
 
 <script>
 import router from "../../../router.js";
-import PagesHeader1400px from "../../../components/PagesHeader1400px.vue";
+import Drawer from "../../../components/Drawer.vue"
+import PagesHeader1400px from "../../../components/PagesHeader/PagesHeader1400px.vue";
 
 export default {
-  components: {PagesHeader1400px},
+  components: {Drawer, PagesHeader1400px},
   data() {
     return {
       Transition1: false,

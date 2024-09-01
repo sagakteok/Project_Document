@@ -1,5 +1,10 @@
 {
   "appId": "com.project_document",
-  "appName": "project-document",
-  "webDir": "dist"
+  "appName": "서류봉투",
+  "webDir": "dist",
+  "plugins": {
+    "Keyboard": {
+      "resize": "native"
+    }
+  }
 }
