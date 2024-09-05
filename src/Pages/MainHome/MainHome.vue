@@ -54,13 +54,13 @@ export default {
   },
   computed: {
     Width1400px() {
-      return this.windowWidth < 1400;
+      return this.windowWidth <= 1400;
     },
     Width800px() {
-      return this.windowWidth < 800;
+      return this.windowWidth <= 800;
     },
     Width500px() {
-      return this.windowWidth < 500;
+      return this.windowWidth <= 500;
     }
   },
   mounted() {

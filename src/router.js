@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import MainHome from "./Pages/MainHome/MainHome.vue";
-import AllDocuments from "./Pages/AllDocuments/AllDocuments1400px.vue"
-import Item1 from "./Pages/AllDocuments/Items/Item1.vue"
+import AllDocuments from "./Pages/AllDocuments/AllDocuments.vue"
+import AllDocumentsItem1 from "./Pages/AllDocuments/Items/Item1.vue"
 
 const routes = [
   {
@@ -10,12 +10,18 @@ const routes = [
   },
   {
     path: "/AllDocuments",
-    component: AllDocuments,
+    meta: { title: '서류 모아보기'},
+    children: [
+      {
+        path: "",
+        component: AllDocuments,
+      },
+      {
+        path: "item1",
+        component: AllDocumentsItem1,
+      }
+    ]
   },
-  {
-    path: "/Item1",
-    component: Item1
-  }
 ];
 
 const router = createRouter({

@@ -1,62 +1,63 @@
 <template>
-  <PagesHeader1400px/>
-  <v-main style="background-color: #F8F8F8">
-    <div style="margin-top: 100px">
-      <div style="margin-top: 20px">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-        </div>
-      </div>
-      <div style="margin-top: 20px">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-        </div>
-      </div>
-      <div style="margin-top: 20px">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-        </div>
-      </div>
-      <div style="margin-top: 20px">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-        </div>
-      </div>
-      <div style="margin-top: 20px">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-        </div>
-      </div>
-      <div style="margin-top: 20px">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-        </div>
-      </div>
-      <div style="margin-top: 20px">
-        <div style="display: flex; align-items: center; justify-content: center">
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-          <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
-        </div>
+  <div style="margin-top: 100px">
+    <div style="margin-top: 20px">
+      <div style="display: flex; align-items: center; justify-content: center">
+        <v-card class="ma-6" elevation="0" @click="GotoItem1()" style="height: 150px; width: 250px; border-radius: 20px"/>
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
       </div>
     </div>
-  </v-main>
+    <div style="margin-top: 20px">
+      <div style="display: flex; align-items: center; justify-content: center">
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <div style="display: flex; align-items: center; justify-content: center">
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <div style="display: flex; align-items: center; justify-content: center">
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <div style="display: flex; align-items: center; justify-content: center">
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <div style="display: flex; align-items: center; justify-content: center">
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <div style="display: flex; align-items: center; justify-content: center">
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+        <v-card class="ma-6" elevation="0" style="height: 150px; width: 250px; border-radius: 20px"/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import router from "../../router.js";
-import PagesHeader1400px from "../../components/PagesHeader/PagesHeader1400px.vue";
+import item1 from "../../Pages/AllDocuments/Items/Item1.vue";
 
 export default {
-  components: {PagesHeader1400px},
+  components: {item1},
   data() {
     return {
-
+    }
+  },
+  methods: {
+    GotoItem1() {
+      router.push('/AllDocuments/item1')
     }
   }
 }

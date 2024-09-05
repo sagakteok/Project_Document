@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer floating elevation="0" style="background-color: transparent">
     <v-scroll-x-transition>
-      <div v-show="Transition1" style="margin-top: 100px">
+      <div v-show="Transition1" style="margin-top: clamp(50px, 20vh, 200px)">
         <text style="margin-left: 30px; font-family: Inter-Bold, Helvetica; color: #006196; font-weight: 700; font-size: 40px">메뉴</text>
         <div style="width: 100%; height: 400px; background-color: #FFFFFF; margin-top: 10px; border-top: 3px solid #006196; border-radius: 0">
           <v-hover v-slot="{isHovering, props}">

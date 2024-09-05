@@ -1,10 +1,19 @@
 <template>
-  <PagesHeader1400px/>
-  <v-main style="background-color: #F8F8F8">
-    <Drawer/>
+  <v-main v-if="Width500px" :style="VMainStyle()">
+    <PagesHeader500px/>
+    <SearchFooter500px/>
+  </v-main>
+  <v-main v-else-if="Width800px" :style="VMainStyle()">
+    <PagesHeader800px/>
+    <SearchFooter800px/>
+  </v-main>
+  <v-main v-else :style="VMainStyle()">
+    <PagesHeader1400px v-if="Width1400px"/>
+    <PagesHeaderDesktop v-if="WidthDesktop"/>
+    <Drawer v-if="WidthDesktop"/>
     <div style="margin-top: 30px; margin-left: 10px">
       <v-dialog-transition>
-        <v-btn v-show="Transition1" variant="text" prepend-icon="mdi-arrow-left" rounded @click="GotoBack()" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px">이전 화면</v-btn>
+        <v-btn v-show="Transition1" variant="text" prepend-icon="mdi-chevron-left" rounded @click="GotoBack()" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px">이전 화면</v-btn>
       </v-dialog-transition>
     </div>
     <div>
@@ -26,7 +35,7 @@
     <div style="margin-top: 120px;">
       <v-row>
         <v-scroll-y-transition>
-          <v-card v-show="Transition2" elevation="0" style="width: 800px; margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
+          <v-card v-show="Transition2" elevation="0" style="width: clamp(600px, 70vw, 800px); margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
             <v-list>
               <v-list-group v-model="open[0]">
                 <template v-slot:activator="{props: activatorProps}">
@@ -46,7 +55,7 @@
     <div style="margin-top: 50px;">
       <v-row>
         <v-scroll-y-transition>
-          <v-card v-show="Transition3" elevation="0" style="width: 800px; margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
+          <v-card v-show="Transition3" elevation="0" style="width: clamp(600px, 70vw, 800px); margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
             <v-list>
               <v-list-group v-model="open[0]">
                 <template v-slot:activator="{props: activatorProps}">
@@ -68,25 +77,57 @@
 
 <script>
 import router from "../../../router.js";
-import Drawer from "../../../components/Drawer.vue"
+import PagesHeader500px from "../../../components/PagesHeader/PagesHeader500px.vue";
+import PagesHeader800px from "../../../components/PagesHeader/PagesHeader800px.vue";
 import PagesHeader1400px from "../../../components/PagesHeader/PagesHeader1400px.vue";
+import PagesHeaderDesktop from "../../../components/PagesHeader/PagesHeaderDesktop.vue";
+import SearchFooter500px from "../../../components/SearchFooter/SearchFooter500px.vue";
+import SearchFooter800px from "../../../components/SearchFooter/SearchFooter800px.vue";
+import Drawer from "../../../components/Drawer.vue"
 
 export default {
-  components: {Drawer, PagesHeader1400px},
+  components: {PagesHeader500px, PagesHeader800px, PagesHeader1400px, PagesHeaderDesktop, SearchFooter500px, SearchFooter800px, Drawer},
   data() {
     return {
+      windowWidth: window.innerWidth,
       Transition1: false,
       Transition2: false,
       Transition3: false,
-      open: [false, false] // Updated to array of booleans
+      open: [false, false],
+      VMainStyle() {
+        return {
+          backgroundColor: "#F8F8F8"
+        }
+      }
     }
   },
   methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    },
     GotoBack() {
-      router.go(-1);
+      const pathArray = this.$route.path.split('/');
+      pathArray.pop();
+      const parentPath = pathArray.join('/') || '/';
+      this.$router.push(parentPath);
+    },
+  },
+  computed: {
+    WidthDesktop() {
+      return this.windowWidth > 1400;
+    },
+    Width1400px() {
+      return this.windowWidth <= 1400;
+    },
+    Width800px() {
+      return this.windowWidth <= 800;
+    },
+    Width500px() {
+      return this.windowWidth <= 500;
     }
   },
   mounted() {
+    window.addEventListener('resize', this.handleResize);
     setTimeout(() => {
       this.Transition1 = true;
     }, 100)
@@ -96,6 +137,9 @@ export default {
     setTimeout(() => {
       this.Transition3 = true;
     }, 500)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
   }
 }
 </script>

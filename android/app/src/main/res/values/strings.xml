@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">서류봉투</string>
+    <string name="title_activity_main">서류봉투</string>
+    <string name="package_name">com.project_document</string>
+    <string name="custom_url_scheme">com.project_document</string>
+</resources>

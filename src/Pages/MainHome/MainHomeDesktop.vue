@@ -1,5 +1,6 @@
 <template>
-  <div style="display: flex; align-items: center; justify-content: center">
+  <div style="
+  display: flex; align-items: center; justify-content: center">
     <v-row>
       <v-scroll-x-reverse-transition>
         <div v-show="Transition1">
@@ -11,12 +12,13 @@
     </v-row>
     <v-row>
       <v-dialog-transition>
-        <div v-show="Transition1" style="margin-right: 100px; margin-left: 100px;border-left: thin solid #00619630; height: 50vh"/>
+        <div v-show="Transition1" style="margin-right: 100px; margin-left: 100px;border-left: thin solid #00619630; height: clamp(450px, 60vh, 700px)"/>
       </v-dialog-transition>
     </v-row>
     <v-row>
       <v-scroll-x-transition>
         <div v-show="Transition1">
+          <div style="margin-top: calc(env(safe-area-inset-top) + 70px)"/>
           <div>
             <v-hover v-slot="{isHovering, props}">
               <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" @click="GotoAllDocuments()">
@@ -31,7 +33,7 @@
               </v-card>
             </v-hover>
           </div>
-          <div style="margin-top: 35px">
+          <div style="margin-top: 30px">
             <v-hover v-slot="{isHovering, props}">
               <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
                 <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
@@ -45,7 +47,7 @@
               </v-card>
             </v-hover>
           </div>
-          <div style="margin-top: 35px">
+          <div style="margin-top: 30px">
             <v-hover v-slot="{isHovering, props}">
               <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
                 <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
@@ -59,7 +61,7 @@
               </v-card>
             </v-hover>
           </div>
-          <div style="margin-top: 35px">
+          <div style="margin-top: 30px">
             <v-hover v-slot="{isHovering, props}">
               <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
                 <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
@@ -73,7 +75,7 @@
               </v-card>
             </v-hover>
           </div>
-          <div style="margin-top: 35px">
+          <div style="margin-top: 30px">
             <v-hover v-slot="{isHovering, props}">
               <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
                 <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
@@ -87,7 +89,7 @@
               </v-card>
             </v-hover>
           </div>
-          <div style="margin-top: 35px">
+          <div style="margin-top: 30px">
             <v-hover v-slot="{isHovering, props}">
               <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" link>
                 <v-list-item v-bind="props" :style="CardListitemStyle(isHovering)">
@@ -101,6 +103,7 @@
               </v-card>
             </v-hover>
           </div>
+          <div style="height: calc(env(safe-area-inset-top) + 60px)"/>
         </div>
       </v-scroll-x-transition>
     </v-row>
@@ -123,7 +126,7 @@ export default {
     },
     CardStyle() {
       return {
-        width: "600px",
+        width: "clamp(450px, 40vw, 600px)",
         margin: "auto",
         borderRadius: "15px",
         fontFamily: "Inter-Bold, Helvetica"
@@ -131,7 +134,7 @@ export default {
     },
     CardListitemStyle() {
       return {
-        height: "80px"
+        height: "clamp(60px, 8vh, 100px)"
       }
     },
     CardTitleStyle(isHovering) {

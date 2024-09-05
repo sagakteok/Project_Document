@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar elevation="0" style="height: 80px; background-color: #F8F8F8; display: flex; justify-content: center">
+  <v-app-bar elevation="0" style="position: fixed; padding-top: calc(env(safe-area-inset-top) + 20px); background-color: #F8F8F8; display: flex; justify-content: center">
     <v-toolbar elevation="0" style="max-width: 1400px; margin: auto; background-color: transparent">
       <text>
         <v-img @click="GotoMainHome()" :src="BarLogo" style="width: 130px; margin-left: 40px; cursor: pointer"/>
