@@ -5,7 +5,7 @@
         <v-img :src="BarLogo" style="width: 130px; margin-left: 40px"/>
       </text>
       <div style="width: 400px">
-        <v-text-field placeholder="서류 / 서비스를 검색해보세요" prepend-inner-icon="mdi-magnify" variant="outlined" bg-color="#FFFFFF" base-color="#FFFFFF" hide-details density="comfortable" clearable rounded style="margin-left: 40px"/>
+        <v-text-field class="MainSearch1400" placeholder="원하는 서류 / 서비스를 검색해보세요" prepend-inner-icon="mdi-magnify" variant="outlined" bg-color="#FFFFFF" base-color="#77A4C4" hide-details density="comfortable" clearable rounded style="margin-left: 40px"/>
       </div>
     </v-toolbar>
   </v-app-bar>
@@ -22,3 +22,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.MainSearch1400 input {
+  font-weight: 700;
+  color: #006196
+}
+</style>

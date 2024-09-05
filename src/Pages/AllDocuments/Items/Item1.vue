@@ -2,32 +2,161 @@
   <v-main v-if="Width500px" :style="VMainStyle()">
     <PagesHeader500px/>
     <SearchFooter500px/>
+    <div>
+      <div style="margin-top: env(safe-area-inset-top)"/>
+      <v-row>
+        <v-scroll-y-reverse-transition>
+          <text v-show="Transition1" style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 600; font-size: 40px; color: #0085CF; margin-left: 40px; margin-top: 40px; cursor: default">
+            {{ Title.title }}</text>
+        </v-scroll-y-reverse-transition>
+      </v-row>
+      <v-row>
+        <v-scroll-y-transition>
+          <div v-show="Transition1" style="margin-left: 40px">
+            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 16px; color: #000000; margin: auto; margin-top: 0px; cursor: default">{{Title.program}}</text>
+          </div>
+        </v-scroll-y-transition>
+      </v-row>
+      <v-row>
+        <v-scroll-y-transition>
+          <div v-show="Transition1" style="margin-left: 40px">
+            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 16px; color: #000000; margin: auto; margin-top: 0px; cursor: default">{{Title.payment}}</text>
+          </div>
+        </v-scroll-y-transition>
+      </v-row>
+    </div>
+    <div style="margin-top: 64px;">
+      <v-row>
+        <v-scroll-y-transition>
+          <v-card v-show="Transition2" elevation="0" style="width: clamp(200px, 90vw, 450px); margin: auto; border-radius: 20px; border: 1px solid #B8CDDF; font-family: Inter-Bold, Helvetica">
+            <v-list>
+              <v-list-group v-model="open[0]">
+                <template v-slot:activator="{props: activatorProps}">
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 16px; color: #004B74; margin-left: 10px">출력 방법</v-list-item>
+                </template>
+                <v-list-item>
+                  <div>
+                    Hi Faker
+                  </div>
+                </v-list-item>
+              </v-list-group>
+            </v-list>
+          </v-card>
+        </v-scroll-y-transition>
+      </v-row>
+    </div>
+    <div style="margin-top: 40px;">
+      <v-row>
+        <v-scroll-y-transition>
+          <v-card v-show="Transition3" elevation="0" style="width: clamp(200px, 90vw, 450px); margin: auto; border-radius: 20px; border: 1px solid #B8CDDF; font-family: Inter-Bold, Helvetica">
+            <v-list>
+              <v-list-group v-model="open[0]">
+                <template v-slot:activator="{props: activatorProps}">
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 16px; color: #004B74; margin-left: 10px">서류 양식</v-list-item>
+                </template>
+                <v-list-item>
+                  <div>
+                    Hi Faker
+                  </div>
+                </v-list-item>
+              </v-list-group>
+            </v-list>
+          </v-card>
+        </v-scroll-y-transition>
+      </v-row>
+    </div>
   </v-main>
   <v-main v-else-if="Width800px" :style="VMainStyle()">
     <PagesHeader800px/>
     <SearchFooter800px/>
+    <div>
+      <div style="margin-top: env(safe-area-inset-top)"/>
+      <v-row>
+        <v-scroll-y-reverse-transition>
+          <text v-show="Transition1" style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 600; font-size: 50px; color: #0085CF; margin-left: 50px; margin-top: 50px; cursor: default">
+            {{ Title.title }}</text>
+        </v-scroll-y-reverse-transition>
+      </v-row>
+      <v-row>
+        <v-scroll-y-transition>
+          <div v-show="Transition1" style="margin-left: 50px">
+            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #000000; margin: auto; margin-top: 0px; cursor: default">{{Title.program}}</text>
+          </div>
+        </v-scroll-y-transition>
+      </v-row>
+      <v-row>
+        <v-scroll-y-transition>
+          <div v-show="Transition1" style="margin-left: 50px">
+            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #000000; margin: auto; margin-top: 0px; cursor: default">{{Title.payment}}</text>
+          </div>
+        </v-scroll-y-transition>
+      </v-row>
+    </div>
+    <div style="margin-top: 80px;">
+      <v-row>
+        <v-scroll-y-transition>
+          <v-card v-show="Transition2" elevation="0" style="width: clamp(450px, 80vw, 650px); margin: auto; border-radius: 20px; border: 1px solid #B8CDDF; font-family: Inter-Bold, Helvetica">
+            <v-list>
+              <v-list-group v-model="open[0]">
+                <template v-slot:activator="{props: activatorProps}">
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #004B74; margin-left: 10px">출력 방법</v-list-item>
+                </template>
+                <v-list-item>
+                  <div>
+                    Hi Faker
+                  </div>
+                </v-list-item>
+              </v-list-group>
+            </v-list>
+          </v-card>
+        </v-scroll-y-transition>
+      </v-row>
+    </div>
+    <div style="margin-top: 40px;">
+      <v-row>
+        <v-scroll-y-transition>
+          <v-card v-show="Transition3" elevation="0" style="width: clamp(450px, 80vw, 650px); margin: auto; border-radius: 20px; border: 1px solid #B8CDDF; font-family: Inter-Bold, Helvetica">
+            <v-list>
+              <v-list-group v-model="open[0]">
+                <template v-slot:activator="{props: activatorProps}">
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #004B74; margin-left: 10px">서류 양식</v-list-item>
+                </template>
+                <v-list-item>
+                  <div>
+                    Hi Faker
+                  </div>
+                </v-list-item>
+              </v-list-group>
+            </v-list>
+          </v-card>
+        </v-scroll-y-transition>
+      </v-row>
+    </div>
   </v-main>
   <v-main v-else :style="VMainStyle()">
     <PagesHeader1400px v-if="Width1400px"/>
     <PagesHeaderDesktop v-if="WidthDesktop"/>
     <Drawer v-if="WidthDesktop"/>
-    <div style="margin-top: 30px; margin-left: 10px">
-      <v-dialog-transition>
-        <v-btn v-show="Transition1" variant="text" prepend-icon="mdi-chevron-left" rounded @click="GotoBack()" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px">이전 화면</v-btn>
-      </v-dialog-transition>
+    <div style="margin-top: calc(env(safe-area-inset-top) + 30px); margin-left: 10px">
+      <v-hover v-slot="{isHovering, props}">
+        <v-dialog-transition>
+          <v-btn v-bind="props" v-show="Transition1" variant="text" prepend-icon="mdi-chevron-left" rounded @click="GotoBack()" :style="BackButtonStyle(isHovering)">돌아가기</v-btn>
+        </v-dialog-transition>
+      </v-hover>
     </div>
     <div>
       <v-row>
         <v-scroll-y-reverse-transition>
-          <text v-show="Transition1" style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 60px; color: #006196; margin: auto; margin-top: 50px; cursor: default">가족관계증명서</text>
+          <text v-show="Transition1" style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 600; font-size: 60px; color: #0085CF; margin: auto; margin-top: 50px; cursor: default">
+            {{ Title.title }}</text>
         </v-scroll-y-reverse-transition>
       </v-row>
       <v-row>
         <v-scroll-y-transition>
           <div v-show="Transition1" style="margin: auto">
-            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #000000; margin: auto; margin-top: 0px; cursor: default">보안 프로그램 X</text>
-            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 25px; color: #000000; margin: auto; margin-top: 0px; margin-right: 10px; margin-left: 10px; cursor: default">|</text>
-            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #000000; margin: auto; margin-top: 0px; cursor: default">출력 비용: 1,000원</text>
+            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #000000; margin: auto; margin-top: 0px; cursor: default">{{Title.program}}</text>
+            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 25px; color: #004B74; margin: auto; margin-top: 0px; margin-right: 10px; margin-left: 10px; cursor: default">|</text>
+            <text style="transition: all 0s ease-in-out; font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #000000; margin: auto; margin-top: 0px; cursor: default">{{Title.payment}}</text>
           </div>
         </v-scroll-y-transition>
       </v-row>
@@ -35,11 +164,11 @@
     <div style="margin-top: 120px;">
       <v-row>
         <v-scroll-y-transition>
-          <v-card v-show="Transition2" elevation="0" style="width: clamp(600px, 70vw, 800px); margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
+          <v-card v-show="Transition2" elevation="0" style="width: clamp(600px, 70vw, 800px); margin: auto; border-radius: 20px; border: 1px solid #B8CDDF; font-family: Inter-Bold, Helvetica">
             <v-list>
               <v-list-group v-model="open[0]">
                 <template v-slot:activator="{props: activatorProps}">
-                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px; color: #000000; margin-left: 10px">출력 방법</v-list-item>
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #004B74; margin-left: 10px">출력 방법</v-list-item>
                 </template>
                 <v-list-item>
                   <div>
@@ -55,11 +184,11 @@
     <div style="margin-top: 50px;">
       <v-row>
         <v-scroll-y-transition>
-          <v-card v-show="Transition3" elevation="0" style="width: clamp(600px, 70vw, 800px); margin: auto; border-radius: 20px; font-family: Inter-Bold, Helvetica">
+          <v-card v-show="Transition3" elevation="0" style="width: clamp(600px, 70vw, 800px); margin: auto; border-radius: 20px; border: 1px solid #B8CDDF; font-family: Inter-Bold, Helvetica">
             <v-list>
               <v-list-group v-model="open[0]">
                 <template v-slot:activator="{props: activatorProps}">
-                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 700; font-size: 20px; color: #000000; margin-left: 10px">서류 양식</v-list-item>
+                  <v-list-item v-bind="activatorProps" style="font-family: Inter-Bold, Helvetica; font-weight: 500; font-size: 20px; color: #004B74; margin-left: 10px">서류 양식</v-list-item>
                 </template>
                 <v-list-item>
                   <div>
@@ -94,9 +223,27 @@ export default {
       Transition2: false,
       Transition3: false,
       open: [false, false],
+      Title: {
+          title: '가족관계증명서',
+          program: '보안 프로그램: X',
+          payment: '출력 비용: 1,000원'
+      },
+      Item: {
+
+      },
       VMainStyle() {
         return {
-          backgroundColor: "#F8F8F8"
+          backgroundColor: "#F7FAFC"
+        }
+      },
+      BackButtonStyle(isHovering) {
+        return {
+          transition: "all .1s ease-in-out",
+          position: "fixed",
+          fontFamily: "Inter-Bold, Helvetica",
+          fontWeight: "700",
+          fontSize: "16px",
+          color: isHovering ? "#00A4FF" : "#004B74"
         }
       }
     }

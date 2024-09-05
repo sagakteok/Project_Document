@@ -1,6 +1,5 @@
 <template>
-  <div style="
-  display: flex; align-items: center; justify-content: center">
+  <div style="display: flex; align-items: center; justify-content: center">
     <v-row>
       <v-scroll-x-reverse-transition>
         <div v-show="Transition1">

@@ -14,14 +14,13 @@
     <MainHome1400px/>
   </v-main>
   <v-main v-else :style="VMainStyle()">
-    <MainHomeHeaderDesktop/>
+    <MainHomeHeader1400px/>
     <MainHomeDesktop/>
   </v-main>
 </template>
 
 <script>
 import router from "../../router.js";
-import MainHomeHeaderDesktop from "../../components/MainHomeHeader/MainHomeHeaderDesktop.vue";
 import MainHomeHeader1400px from "../../components/MainHomeHeader/MainHomeHeader1400px.vue";
 import MainHomeHeader800px from "../../components/MainHomeHeader/MainHomeHeader800px.vue";
 import MainHomeHeader500px from "../../components/MainHomeHeader/MainHomeHeader500px.vue";
@@ -33,7 +32,7 @@ import SearchFooter800px from "../../components/SearchFooter/SearchFooter800px.v
 import SearchFooter500px from "../../components/SearchFooter/SearchFooter500px.vue";
 
 export default {
-  components: {MainHomeHeaderDesktop, MainHomeHeader1400px, MainHomeHeader800px, MainHomeHeader500px, MainHomeDesktop, MainHome1400px, MainHome800px, MainHome500px, SearchFooter800px, SearchFooter500px},
+  components: {MainHomeHeader1400px, MainHomeHeader800px, MainHomeHeader500px, MainHomeDesktop, MainHome1400px, MainHome800px, MainHome500px, SearchFooter800px, SearchFooter500px},
   data() {
     return {
       windowWidth: window.innerWidth,

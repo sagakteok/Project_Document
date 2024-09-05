@@ -1,12 +1,18 @@
 <template>
-  <v-app-bar elevation="0" style="position: fixed; padding-top: env(safe-area-inset-top); background-color: #F8F8F8;">
-    <v-app-bar-title style="font-family: Inter-Bold, Helvetica; font-weight: 700; margin-left: 5px; font-size: 25px">{{pageTitle}}</v-app-bar-title>
+  <v-app-bar elevation="0" style="position: fixed; padding-top: env(safe-area-inset-top); background-color: #F7FAFC;">
+    <v-app-bar-title style="font-family: Inter-Bold, Helvetica; font-weight: 600; color: #004B74; margin-left: 13px; font-size: 25px; cursor: default">{{pageTitle}}</v-app-bar-title>
     <template v-slot:prepend>
-      <v-btn icon="mdi-chevron-left" style="font-size: 20px" @click="GotoBack()"/>
+      <v-hover v-slot="{isHovering, props}">
+        <v-icon v-bind="props" icon="mdi-chevron-left" :style="LeftButtonStyle(isHovering)" @click="GotoBack()"/>
+      </v-hover>
     </template>
     <template v-slot:append>
-      <v-btn icon="mdi-home-outline" v-if="ShowIcon" style="font-size: 15px" @click="GotoMainHome()"/>
-      <v-app-bar-nav-icon v-if="ShowIcon" style="font-size: 15px" @click.stop="drawer = !drawer"/>
+      <v-hover v-slot="{isHovering, props}">
+        <v-icon v-bind="props" icon="mdi-home-outline" v-if="ShowIcon" :style="RightButtonStyle(isHovering)" @click="GotoMainHome()"/>
+      </v-hover>
+      <v-hover v-slot="{isHovering, props}">
+        <v-icon v-bind="props" icon="mdi-menu" v-if="ShowIcon" :style="RightButtonStyle(isHovering || drawer)" @click.stop="drawer = !drawer"/>
+      </v-hover>
     </template>
   </v-app-bar>
   <v-navigation-drawer elevation="0" v-model="drawer" :location="'top'" temporary style="border-bottom-left-radius: 30px; border-bottom-right-radius: 30px">
@@ -43,6 +49,22 @@ export default {
     return {
       drawer: false,
       group: null,
+      LeftButtonStyle(isHovering) {
+        return {
+          transition: "all .1s ease-in-out",
+          fontSize: "38px",
+          marginLeft: "7px",
+          color: isHovering ? "#00A4FF" : "#004B74"
+        }
+      },
+      RightButtonStyle(isHovering) {
+        return {
+          transition: "all .1s ease-in-out",
+          fontSize: "31px",
+          marginRight: "17px",
+          color: isHovering ? "#00A4FF" : "#004B74"
+        }
+      },
       DrawerTextStyle(isHovering) {
         return {
           transition: "all .1s ease-in-out",
