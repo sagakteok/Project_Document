@@ -11,7 +11,7 @@
                   <text v-bind="props" :style="CardTitleStyle(isHovering)">서류 모아보기</text>
                 </template>
                 <template v-slot:append>
-                  <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">서류 하나하나 찾고 싶다면?</text>
+                  <text :style="CardSubtitleStyle()">서류 하나하나 찾고 싶다면?</text>
                 </template>
               </v-list-item>
             </v-card>
@@ -27,7 +27,7 @@
                   <text v-bind="props" :style="CardTitleStyle(isHovering)">법률, 행정</text>
                 </template>
                 <template v-slot:append>
-                  <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">법률, 행정 업무를 처리하고 싶다면?</text>
+                  <text :style="CardSubtitleStyle()">법률, 행정 업무를 처리하고 싶다면?</text>
                 </template>
               </v-list-item>
             </v-card>
@@ -43,7 +43,7 @@
                   <text v-bind="props" :style="CardTitleStyle(isHovering)">금융, 세무</text>
                 </template>
                 <template v-slot:append>
-                  <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">금융 및 세무 업무를 처리하고 싶다면?</text>
+                  <text :style="CardSubtitleStyle()">금융 및 세무 업무를 처리하고 싶다면?</text>
                 </template>
               </v-list-item>
             </v-card>
@@ -59,7 +59,7 @@
                   <text v-bind="props" :style="CardTitleStyle(isHovering)">자동차</text>
                 </template>
                 <template v-slot:append>
-                  <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">자동차 관련 업무를 처리하고 싶다면?</text>
+                  <text :style="CardSubtitleStyle()">자동차 관련 업무를 처리하고 싶다면?</text>
                 </template>
               </v-list-item>
             </v-card>
@@ -75,7 +75,7 @@
                   <text v-bind="props" :style="CardTitleStyle(isHovering)">부동산</text>
                 </template>
                 <template v-slot:append>
-                  <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">부동산 관련 업무를 처리하고 싶다면?</text>
+                  <text :style="CardSubtitleStyle()">부동산 관련 업무를 처리하고 싶다면?</text>
                 </template>
               </v-list-item>
             </v-card>
@@ -91,7 +91,7 @@
                   <text v-bind="props" :style="CardTitleStyle(isHovering)">사업, 근로</text>
                 </template>
                 <template v-slot:append>
-                  <text style="font-weight: 500; font-size: 15px; color: #808080; margin-right: 15px">근로에 관한 업무를 처리하고 싶다면?</text>
+                  <text :style="CardSubtitleStyle()">근로에 관한 업무를 처리하고 싶다면?</text>
                 </template>
               </v-list-item>
             </v-card>
@@ -122,6 +122,8 @@ export default {
         width: "clamp(500px, 50vw, 650px)",
         margin: "auto",
         borderRadius: "15px",
+        border: "1px solid #B8CDDF",
+        backgroundColor: "#FFFFFF",
         fontFamily: "Inter-Bold, Helvetica"
       }
     },
@@ -133,10 +135,18 @@ export default {
     CardTitleStyle(isHovering) {
       return {
         transition: "all .1s ease-in-out",
-        fontWeight: "800",
+        fontWeight: "700",
         fontSize: isHovering ? "22px" : "20px",
-        color: isHovering ? "#006196" : "#000000",
+        color: isHovering ? "#00A4FF" : "#000000",
         marginLeft: "15px"
+      }
+    },
+    CardSubtitleStyle() {
+      return {
+        fontWeight: "400",
+        fontSize: "15px",
+        color: "#808080",
+        marginRight: "15px"
       }
     }
   },
