@@ -1,19 +1,19 @@
 <template>
-  <v-main v-if="Width500px" :style="VMainStyle()">
+  <v-main v-if="Width500px" style="background-color: #F1FAFF; display: flex; align-items: center; justify-content: center">
     <MainHomeHeader500px/>
     <MainHome500px/>
     <SearchFooter500px/>
   </v-main>
-  <v-main v-else-if="Width800px" :style="VMainStyle()">
+  <v-main v-else-if="Width800px" style="background-color: #F1FAFF; display: flex; align-items: center; justify-content: center">
     <MainHomeHeader800px/>
     <MainHome800px/>
     <SearchFooter800px/>
   </v-main>
-  <v-main v-else-if="Width1400px" :style="VMainStyle()">
+  <v-main v-else-if="Width1400px" style="background-color: #F1FAFF; display: flex; align-items: center; justify-content: center">
     <MainHomeHeader1400px/>
     <MainHome1400px/>
   </v-main>
-  <v-main v-else :style="VMainStyle()">
+  <v-main v-else style="background-color: #4B7BF2; display: flex; align-items: center">
     <MainHomeHeader1400px/>
     <MainHomeDesktop/>
   </v-main>
@@ -35,15 +35,7 @@ export default {
   components: {MainHomeHeader1400px, MainHomeHeader800px, MainHomeHeader500px, MainHomeDesktop, MainHome1400px, MainHome800px, MainHome500px, SearchFooter800px, SearchFooter500px},
   data() {
     return {
-      windowWidth: window.innerWidth,
-      VMainStyle() {
-        return {
-          backgroundColor: "#F1FAFF",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }
-      }
+      windowWidth: window.innerWidth
     }
   },
   methods: {
