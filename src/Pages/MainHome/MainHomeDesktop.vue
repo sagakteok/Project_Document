@@ -1,20 +1,21 @@
 <template>
-  <v-container style="max-width: 2000px">
+  <v-img :src="Banner1Background" cover width="100vw" height="100vh" style="display: flex; align-items: center">
+    <v-container style="max-width: 2000px">
     <v-row justify="space-around">
       <v-scroll-x-transition>
         <div v-show="Transition1">
           <div style="margin-left: 90px">
             <v-row>
-              <text style="font-weight: bold; color: #FFFFFF; font-size: 40px; text-shadow: 0px 0px 1px 1px #000000">서비스를 선택해보세요.</text>
+              <text style="font-family: SpoqaHanSansNeo-thin; color: #2155D6; font-size: 55px">원하는 민원문서,</text>
             </v-row>
-            <v-row>
-              <text style="font-weight: lighter; color: #FFFFFF; font-size: 70px">원하는 민원문서,</text>
-            </v-row>
-            <v-row>
-              <text style="font-weight: lighter; color: #FFFFFF; font-size: 70px">한 곳에서 출력방법을 찾아보세요!</text>
+            <v-row style="margin-top: 0px">
+              <text style="font-family: SpoqaHanSansNeo-bold; color: #000000; font-size: 65px">한 곳에서 출력방법을 찾아보세요!</text>
             </v-row>
           </div>
-          <div style="margin-top: 100px; margin-left: 70px">
+          <div style="margin-top: 120px; margin-left: 70px">
+            <v-row>
+              <text style="font-family: SpoqaHanSansNeo-bold; color: #525252; font-size: 20px; margin-left: 20px; margin-bottom: 20px; text-shadow: 0px 0px 1px 1px #000000">서비스를 선택해보세요.</text>
+            </v-row>
             <v-row justify="start">
               <v-hover v-slot="{isHovering, props}">
                 <v-card v-bind="props" elevation="0" :style="CardStyle(isHovering)" @click="GotoAllDocuments()">
@@ -96,11 +97,12 @@
       </v-scroll-x-transition>
       <v-scroll-x-reverse-transition>
         <div v-show="Transition1" style="display: flex; align-items: center">
-          <v-img :src="DesktopBanner1" style="width: 300px; margin-right: 90px"/>
+          <v-img :src="DesktopBanner1" style="width: 320px; margin-right: 90px"/>
         </div>
       </v-scroll-x-reverse-transition>
     </v-row>
   </v-container>
+  </v-img>
 </template>
 
 <script>
@@ -111,6 +113,7 @@ export default {
   data(){
     return {
       DesktopBanner1: new URL('../../assets/DesktopBanner1.png', import.meta.url).href,
+      Banner1Background: new URL('../../assets/Banner1Background.png', import.meta.url).href,
       Transition1: false,
       Title:
           ['법률, 행정',
@@ -135,15 +138,15 @@ export default {
         display: "flex",
         width: "180px",
         height: "100px",
-        borderRadius: "15px",
+        borderRadius: "20px",
         backgroundColor: "#FFFFFF",
-        marginLeft: "20px"
+        marginLeft: "20px",
       }
     },
     CardTitleStyle(isHovering) {
       return {
         transition: "all .1s ease-in-out",
-        fontWeight: "bold",
+        fontFamily: "SpoqaHanSansNeo-bold",
         fontSize: "20px",
         margin: "auto",
         color: isHovering ? "#00A4FF" : "#2155D6",
@@ -151,7 +154,7 @@ export default {
     },
     CardSubtitleStyle() {
       return {
-        fontWeight: "normal",
+        fontFamily: "SpoqaHanSansNeo-light",
         fontSize: "10px",
         color: "#808080",
         margin: "auto",
@@ -166,10 +169,3 @@ export default {
   }
 }
 </script>
-
-<style>
-@font-face {
-  font-family: 'SpoqaHanSansNeo-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
-}
-</style>

@@ -13,7 +13,7 @@
     <MainHomeHeader1400px/>
     <MainHome1400px/>
   </v-main>
-  <v-main v-else style="background-color: #4B7BF2; display: flex; align-items: center">
+  <v-main v-else>
     <MainHomeHeader1400px/>
     <MainHomeDesktop/>
   </v-main>

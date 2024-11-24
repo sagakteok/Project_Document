@@ -1,11 +1,11 @@
 <template>
-  <v-app-bar elevation="0" style="position: fixed; padding: calc(env(safe-area-inset-top) + 10px); background-color: #FFFFFF; display: flex; justify-content: center">
+  <v-app-bar elevation="0" style="position: fixed; padding: calc(env(safe-area-inset-top) + 10px); background-color: #FFFFFF; display: flex; justify-content: center; border-bottom: 1px solid #EBEDF1">
     <v-toolbar elevation="0" style="max-width: 2000px; margin: auto; background-color: transparent">
       <text>
         <v-img :src="BarLogo" style="width: 130px; margin-left: 40px"/>
       </text>
       <div style="width: 400px">
-        <v-text-field class="MainSearch1400" placeholder="원하는 서류를 검색해보세요" prepend-inner-icon="mdi-magnify" variant="outlined" bg-color="#F8FAFF" base-color="#F8FAFF" hide-details density="comfortable" clearable rounded style="margin-left: 40px"/>
+        <v-text-field class="MainSearch1400" placeholder="원하는 서류를 검색해보세요" prepend-inner-icon="mdi-magnify" variant="outlined" bg-color="#F8FAFF" base-color="#F8FAFF" hide-details density="comfortable" clearable rounded style="font-family: SpoqaHanSansNeo-Regular; margin-left: 40px"/>
       </div>
     </v-toolbar>
   </v-app-bar>
