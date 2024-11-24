@@ -1,17 +1,17 @@
 <template>
-  <v-container style="max-width: 1600px">
-    <v-row justify="space-between">
+  <v-container style="max-width: 2000px">
+    <v-row justify="space-around">
       <v-scroll-x-transition>
         <div v-show="Transition1">
           <div style="margin-left: 90px">
             <v-row>
-              <text style="font-weight: bold; color: #FFFFFF; font-size: 33px; text-shadow: 0px 0px 1px 1px #000000">서비스를 선택해보세요.</text>
+              <text style="font-weight: bold; color: #FFFFFF; font-size: 40px; text-shadow: 0px 0px 1px 1px #000000">서비스를 선택해보세요.</text>
             </v-row>
             <v-row>
-              <text style="font-weight: lighter; color: #FFFFFF; font-size: 56px">원하는 민원문서,</text>
+              <text style="font-weight: lighter; color: #FFFFFF; font-size: 70px">원하는 민원문서,</text>
             </v-row>
             <v-row>
-              <text style="font-weight: lighter; color: #FFFFFF; font-size: 56px">한 곳에서 출력방법을 찾아보세요!</text>
+              <text style="font-weight: lighter; color: #FFFFFF; font-size: 70px">한 곳에서 출력방법을 찾아보세요!</text>
             </v-row>
           </div>
           <div style="margin-top: 100px; margin-left: 70px">
@@ -95,8 +95,8 @@
         </div>
       </v-scroll-x-transition>
       <v-scroll-x-reverse-transition>
-        <div v-show="Transition1" style="display: flex; align-items: center; margin-right: 90px">
-          <v-img :src="DesktopBanner1" style="width: 300px"/>
+        <div v-show="Transition1" style="display: flex; align-items: center">
+          <v-img :src="DesktopBanner1" style="width: 300px; margin-right: 90px"/>
         </div>
       </v-scroll-x-reverse-transition>
     </v-row>
